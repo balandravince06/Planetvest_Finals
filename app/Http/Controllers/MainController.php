@@ -6,20 +6,20 @@ use Illuminate\Http\Request;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 
-class HomepageController extends Controller
+class MainController extends Controller
 {
     public function index(Request $request): Factory|View|Application
     {
-        return view('layout');
+        return view('homepage');
     }
-    public function login(Request $request): Factory|View|Application
-    {
+    function login(){
         return view('login');
     }
-    public function register(Request $request): Factory|View|Application
-    {
+    function register(){
         return view('register');
     }
 }
