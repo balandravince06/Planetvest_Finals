@@ -1,36 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login to PlanetVest</title>
+  <link rel="stylesheet" href="{{ asset('assets/css/register.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+</head>
+<body>
+
 @extends('layout')
-@section('title', 'Register to PlanetVest')
 @section('contents')
 
-<div class="containerRegister">
-  <form class="ms-auto me-auto mt-auto" style="width: 500px">
-  <div class="mb-3">
-        <label for="firstName" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="firstName">
-    </div>
-    <div class="mb-3">
-        <label for="lastName" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="lastName">
-    </div>
-    <div class="mb-3">
-        <label for="email" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-    </div>
-  <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password">
-  </div>
-  <div class="mb-3">
-        <label for="password" class="form-label">Confirm Password</label>
-        <input type="password" class="form-control" id="password">
-  </div>
-  <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Show Password</label>
-  </div>
-       <button type="submit" class="btn btn-primary">Register</button>
-</form>
+      <!----------------------- Main Container -------------------------->
+     <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <!----------------------- Login Container -------------------------->
+       <div class="row border rounded-5 p-3 bg-white shadow box-area">
+    <!--------------------------- Left Box ----------------------------->
+       <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #0e7c49;">
+           <div class="featured-image mb-3">
+            <img src=" {{ asset('assets/images/farmer.png')}}" class="img-fluid" style="width: 250px;">
+           </div>
+           <p class="text-white fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">Join Us</p>
+           <small class="text-white text-wrap text-center" style="width: 17rem;font-family: 'Courier New', Courier, monospace;">A crowdfunding platform for farmers.</small>
+       </div> 
+    <!-------------------- ------ Right Box ---------------------------->
+        
+       <div class="col-md-6 right-box">
+          <div class="row align-items-center">
+                <div class="header-text mb-4">
+                     <h2>Register to PlanetVest!</h2>
+                </div>
+                <div class="input-group mb-2">
+                    <input type="email" class="form-control form-control-lg bg-light fs-6" placeholder="Email address" id="email" required/>
+                </div>
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="First Name" id="fname" required/>
+                </div>
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Last Name" id="lname" required/>
+                </div>
+                <div class="input-group mb-2">
+                    <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" id="password" required/>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Confirm Password" id="password" required/>
+                </div>
+                <div class="input-group mb-3">
+                    <button class="btn btn-lg btn-success w-100 fs-6">Register</button>
+                </div>
+                <div class="input-group mb-3">
+                    <button class="btn btn-lg btn-light w-100 fs-6"><img src=" {{ asset('assets/images/google.png')}} " style="width:20px" class="me-2"><small>Sign Up with Google</small></button>
+                </div>
+                <div class="row">
+                    <small>Already have an account?<a href="login">Sign In</a></small>
+                </div>
+          </div>
+       </div> 
       </div>
+    </div>
+
 @endsection
 
-
+<script>
+    function togglePasswordVisibility() {
+      const passwordInput = document.getElementById('password');
+      const showPasswordCheckbox = document.getElementById('showPasswordCheckbox');
+      
+      if (showPasswordCheckbox.checked) {
+        passwordInput.type = 'text';
+      } else {
+        passwordInput.type = 'password';
+      }
+    }
+  </script>
+</body>
+</html>
